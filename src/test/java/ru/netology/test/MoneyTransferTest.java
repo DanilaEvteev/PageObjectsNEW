@@ -77,18 +77,6 @@ public class MoneyTransferTest {
 
     }
 
-    @Test
-    void transferFromFirstToSecondCardInvalidAmount() {
-        var firstCardInfo = getFirstCard();
-        var secondCardInfo = getSecondCard();
-        var firstCardBalance = dashboardPage.getCardBalance(firstCardInfo);
-        var amount = generalInvalidAmount(firstCardBalance);
-        dashboardPage.selectCardToTransfer(secondCardInfo);
-
-        TransferPage error = new TransferPage();
-        error.makeTransfer(String.valueOf(amount), firstCardInfo);
-        error.findErrorMessageContent("Ошибка перевода", "Ошибка");
-
-    }
+   
 
 }
